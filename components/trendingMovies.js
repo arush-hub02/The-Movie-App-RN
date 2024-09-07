@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  TouchableWithoutFeedback,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Carousel from "react-native-snap-carousel";
@@ -15,7 +16,7 @@ var { width, height } = Dimensions.get("window");
 export default function TrendingMovies({ data }) {
   const navigation = useNavigation();
 
-  const handleClick = ()=>{
+  const handleClick = (item)=>{
     navigation.navigate('Movie', item)
     
   }
@@ -38,17 +39,17 @@ export default function TrendingMovies({ data }) {
   );
 }
 
-const MovieCard = ({ scrollViewRef, handleClick }) => {
+const MovieCard = ({ item, handleClick }) => {
   return ( 
-        <TouchableOpacity>
+        <TouchableWithoutFeedback onPress={handleClick}>
           <Image
             source={require("../assets/images/image2.jpg")}
             style={{
               width: width * 0.6,
               height: height * 0.4,
             }}
-            className="rounded-3xl mr-3"
+            className="rounded-3xl"
           />
-        </TouchableOpacity>
+        </TouchableWithoutFeedback>
   );
 };

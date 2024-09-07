@@ -4,7 +4,7 @@ import { styles } from '../theme'
 import { useNavigation } from '@react-navigation/native';
 
 export default function MovieList({title, data}) {
-    let movieName = 'Ant Man and the wasp dvdfsdbfdsbxdbxx';
+    let movieName = 'Spider Man';
     const navigation = useNavigation();
 
     var { width, height } = Dimensions.get("window");
