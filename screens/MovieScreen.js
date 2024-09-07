@@ -18,7 +18,7 @@ export default function MovieScreen() {
   const [isFavourite, toggleFavourite] = useState(false);
   const [cast, setCast] = useState([1,2,3,4,5]);
   const [similarMovies, setSimilarMovies] = useState([1,2,3,4,5]);
-  let movieName = "Black Panther"
+  let movieName = "John Wick"
 
   useEffect(() => {
     // call the movie detail api
@@ -43,7 +43,7 @@ export default function MovieScreen() {
           </SafeAreaView>
           <View>
             <Image
-              source={require('../assets/images/image3.jpg')}
+              source={require('../assets/images/image2.jpg')}
               style={{width, height: height * 0.55}} />
             <LinearGradient
               colors={['transparent', 'rgba(23,23,23,0.8)' , 'rgba(23,23,23,1)']}
@@ -71,7 +71,7 @@ export default function MovieScreen() {
         </View>
       {/* description */}
         <Text className="text-neutral-400 mx-4 tracking-wide">
-        Marvel Studios’ “Black Panther” follows T’Challa who, after the death of his father, the King of Wakanda, returns home to the isolated, technologically advanced African nation to succeed to the throne and take his rightful place as king. But when a powerful old enemy reappears, T’Challa’s mettle as king—and Black Panther—is tested when he is drawn into a formidable conflict that puts the fate of Wakanda and the entire world at risk. Faced with treachery and danger, the young king must rally his allies and release the full power of Black Panther to defeat his foes and secure the safety of his people and their way of life.
+        John Wick is a neo-noir action film series starring Keanu Reeves as a retired assassin seeking vengeance. The first film, released in 2014, begins with Wick avenging the death of his beloved dog, a gift from his late wife. Known for its stylish choreography, intense fight sequences, and gunplay, the series redefined modern action cinema. Wick’s character is both relentless and emotionally driven, fueled by his love for his wife. The franchise has expanded with sequels, each delving deeper into a shadowy criminal underworld. Keanu Reeves’ dedication to stunt work and training adds authenticity to the role. The films blend brutal action with moments of quiet reflection, making Wick a unique and iconic antihero. With its growing success, the John Wick series has become a cultural phenomenon.
         </Text>
       </View>
 
