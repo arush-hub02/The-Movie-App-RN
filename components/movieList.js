@@ -3,7 +3,7 @@ import React from 'react'
 import { styles } from '../theme'
 import { useNavigation } from '@react-navigation/native';
 
-export default function MovieList({title, data}) {
+export default function MovieList({title, data, hideSeeAll}) {
     let movieName = 'Spider Man';
     const navigation = useNavigation();
 
@@ -14,9 +14,15 @@ export default function MovieList({title, data}) {
     <View className=" mb-8 space-y-4">
         <View className="flex flex-row justify-between items-center mx-4">
             <Text className="text-white text-2xl font-semibold">{title}</Text>
-            <TouchableOpacity>
-                <Text style={styles.text} className="text-lg">See All</Text>
-            </TouchableOpacity>
+
+            {
+                !hideSeeAll && (
+                    <TouchableOpacity>
+                        <Text style={styles.text} className="text-lg">See All</Text>
+                    </TouchableOpacity>
+                )
+            }
+            
         </View>
 
         <ScrollView
@@ -29,7 +35,7 @@ export default function MovieList({title, data}) {
                     return (
                         <TouchableWithoutFeedback
                             key={index}
-                            onPress={()=>navigation.navigate('Movie', item)}
+                            onPress={()=>navigation.push('Movie', item)}
                         >
                             <View>
                                 <Image

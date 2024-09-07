@@ -6,6 +6,7 @@ import { HeartIcon } from 'react-native-heroicons/solid'
 import { styles, theme } from '../theme';
 import {LinearGradient} from 'expo-linear-gradient';
 import Cast from '../components/cast';
+import MovieList from '../components/movieList';
 
 export default function MovieScreen() {
 
@@ -16,6 +17,7 @@ export default function MovieScreen() {
 
   const [isFavourite, toggleFavourite] = useState(false);
   const [cast, setCast] = useState([1,2,3,4,5]);
+  const [similarMovies, setSimilarMovies] = useState([1,2,3,4,5]);
   let movieName = "Black Panther"
 
   useEffect(() => {
@@ -74,7 +76,10 @@ export default function MovieScreen() {
       </View>
 
       {/* cast */}
-        <Cast cast={cast}/>
+        <Cast navigation={navigation} cast={cast}/>
+
+      {/* similar movies */}
+        <MovieList title="Similar Movies" hideSeeAll= {true} data={similarMovies}/>
       
     </ScrollView>
   )
