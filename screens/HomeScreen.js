@@ -4,11 +4,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Bars3CenterLeftIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import { styles } from "../theme";
 import TrendingMovies from "../components/trendingMovies";
+import MovieList from "../components/movieList";
 
 
 
 export default function HomeScreen() {
-    const [trending, setTrending] = useState([1,2,3])
+    const [trending, setTrending] = useState([1,1,1,1,1])
   return (
     <View className="flex-1 bg-neutral-800 pt-2">
       {/* searchBar and logo */}
@@ -31,6 +32,10 @@ export default function HomeScreen() {
         {/* Trending movies carousel */}
 
         <TrendingMovies data={trending}/>
+
+        {/* upcomming movies row */}
+
+        {/* <MovieList title="Upcoming" data={} /> */}
         
       </ScrollView>
     </View>
