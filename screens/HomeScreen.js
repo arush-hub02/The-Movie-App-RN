@@ -9,7 +9,10 @@ import MovieList from "../components/movieList";
 
 
 export default function HomeScreen() {
-    const [trending, setTrending] = useState([1,1,1,1,1])
+    const [trending, setTrending] = useState([1,1,1,1,1]);
+    const [Upcoming, setUpcoming] = useState([1,1,1,1]);
+    const [topRated, setTopRated] = useState([1,1,1,1]);
+
   return (
     <View className="flex-1 bg-neutral-800 pt-2">
       {/* searchBar and logo */}
@@ -35,18 +38,9 @@ export default function HomeScreen() {
 
         {/* upcomming movies row */}
 
-        {/* <MovieList title="Upcoming" data={} /> */}
+        <MovieList title="Upcoming" data={Upcoming} />
         
       </ScrollView>
     </View>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'red',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
