@@ -5,6 +5,8 @@ import { Bars3CenterLeftIcon, MagnifyingGlassIcon } from "react-native-heroicons
 import { styles } from "../theme";
 import TrendingMovies from "../components/trendingMovies";
 import MovieList from "../components/movieList";
+import { useNavigation } from "@react-navigation/native";
+import Loading from "../components/loading";
 
 
 
@@ -12,6 +14,9 @@ export default function HomeScreen() {
     const [trending, setTrending] = useState([1,1,1,1,1]);
     const [Upcoming, setUpcoming] = useState([1,1,1,1]);
     const [topRated, setTopRated] = useState([1,1,1,1]);
+    const [loading, setLoading] =   useState(false);
+
+    const navigation = useNavigation();
 
   return (
     <View className="flex-1 bg-neutral-800 pt-2">
@@ -21,13 +26,17 @@ export default function HomeScreen() {
             <Bars3CenterLeftIcon  size="30" strokeWidth={2} color="white"/>
             <Text className="text-3xl font-bold text-white" >
                 <Text style={styles.text}>M</Text>ovies</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Search")} >
                 <MagnifyingGlassIcon size="30" strokeWidth={2} color="white"/>
             </TouchableOpacity>
         </View>
       </SafeAreaView>
 
-      <ScrollView 
+    {
+      loading? (
+        <Loading/>
+      ):(
+        <ScrollView 
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{paddingBottom: 10 }}
       >
@@ -45,6 +54,11 @@ export default function HomeScreen() {
         <MovieList title="Top Rated" data={topRated} />
         
       </ScrollView>
+      )
+    }
+
+
+      
     </View>
   );
 }

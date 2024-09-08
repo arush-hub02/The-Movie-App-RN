@@ -42,7 +42,7 @@ export default function PersonScreen() {
         >
           <HeartIcon
             size="35"
-            color={isFavourite ? theme.background : "white"}
+            color={isFavourite ? "red" : "white"}
           />
         </TouchableOpacity>
       </SafeAreaView>
