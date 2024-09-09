@@ -8,9 +8,11 @@ import {LinearGradient} from 'expo-linear-gradient';
 import Cast from '../components/cast';
 import MovieList from '../components/movieList';
 
+var { width, height } = Dimensions.get("window");
+
 export default function MovieScreen() {
 
-  var { width, height } = Dimensions.get("window");
+  
 
   const {params: item} = useRoute();
   const navigation = useNavigation();
