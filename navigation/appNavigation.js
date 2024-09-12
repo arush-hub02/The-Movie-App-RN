@@ -7,6 +7,8 @@ import HomeScreen from '../screens/HomeScreen';
 import MovieScreen from '../screens/MovieScreen';
 import PersonScreen from '../screens/PersonScreen';
 import SearchScreen from '../screens/SearchScreen';
+import SettingScreen from '../screens/SettingScreen';
+import privacyPolicy from '../webviews/privacyPolicy';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +20,8 @@ export default function AppNavigation() {
       <Stack.Screen name="Movie" options={{headerShown: false}} component={MovieScreen} />
       <Stack.Screen name="Person" options={{headerShown: false}} component={PersonScreen} />
       <Stack.Screen name="Search" options={{headerShown: false}} component={SearchScreen} />
+      <Stack.Screen name="Setting" options={{headerShown: false}} component={SettingScreen} />
+      <Stack.Screen name="PrivacyPolicy" options={{headerShown: false}} component={privacyPolicy} />
     </Stack.Navigator>
   </NavigationContainer>
   )
